@@ -1,0 +1,56 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8" />
+    <title>Jogo Sem Nome</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.23.0/dist/phaser.js"></script>
+    <script src="Cenas/cena01.js"></script>
+    <script src="Cenas/welcome.js"></script>
+
+    <style>
+        body {
+            margin-top: 1px;
+            padding: 0;
+        }
+
+        canvas {
+            border: 1px solid #000000;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="game"></div>
+
+    <script type="text/javascript">
+        /*Global variables definition*/
+        const config = {
+            type: Phaser.AUTO,
+            scale: {
+                mode: Phaser.Scale.FIT
+            },
+            autoCenter: Phaser.Scale.CENTER,
+            width: 1050, //largura da tela do jogo
+            height: 625, //altura da tela do jogo
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: { y: 100 },
+                    debug: false 
+                }
+            },
+            parent: "game",
+            dom:{
+               createContainer: true,
+            },
+            scene: [Welcome, cena01]
+        };
+        
+        var game = new Phaser.Game(config);
+        game.scene.start('Welcome');
+    </script>
+
+</body>
+</html>
