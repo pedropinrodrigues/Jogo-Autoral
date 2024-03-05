@@ -2,7 +2,8 @@
 <html lang="en"> 
 <head> 
     <meta charset="UTF-8" />
-    <title>Jogo Sem Nome</title>
+    <title>Jogo Sem Nome</title> 
+    <!-- Atribuindo as cenas  -->
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.23.0/dist/phaser.js"></script>
     <script src="Cenas/cena01.js"></script>
     <script src="Cenas/welcome.js"></script>
@@ -23,7 +24,7 @@
 <body>
 
     <div id="game"></div>
-
+<!-- Configurando o jogo -->
     <script type="text/javascript">
         /*Global variables definition*/
         const config = {
@@ -45,9 +46,10 @@
             dom:{
                createContainer: true,
             },
+            // definindo a sequência de cenas
             scene: [Welcome, cena01]
         };
-        
+        //iniciando Manualmente a cena de recebimento do jogador
         var game = new Phaser.Game(config);
         game.scene.start('Welcome');
     </script>
